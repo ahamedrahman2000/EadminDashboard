@@ -1,7 +1,21 @@
+import { useState } from "react";
 import { products } from "../data/products";
 import SalesChart from "./SalesChart";
 
 export default function Home() {
+  const [search, setSearch] = useState("");
+
+  // const filteredProducts = products.filter((product) =>
+  //   product.title.toLowerCase().includes(search.toLowerCase())
+  // );
+
+    const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(search.toLowerCase())
+  );
+  
+  const onChange = (e) => {
+    setSearch(e.target.value);
+  };
   return (
     <>
       <section className="px-6 py-5 space-y-6">
@@ -13,7 +27,7 @@ export default function Home() {
               <p className="text-xl font-medium">Total Orders</p>
               <p className="text-gray-700 font-semibold">$84,000</p>
             </div>
-            <span className="text-5xl text-blue-500">
+            <span className="text-5xl text-blue-500 hover:scale-110 duration-300">
               <i className="fa-solid fa-cart-shopping"></i>
             </span>
           </div>
@@ -23,7 +37,7 @@ export default function Home() {
               <p className="text-xl font-medium">Pending Orders</p>
               <p className="text-gray-700 font-semibold">$24,000</p>
             </div>
-            <span className="text-5xl text-yellow-500">
+            <span className="text-5xl text-yellow-500 hover:scale-110 duration-300">
               <i className="fa-solid fa-hourglass-half"></i>
             </span>
           </div>
@@ -33,7 +47,7 @@ export default function Home() {
               <p className="text-xl font-medium">Online Orders</p>
               <p className="text-gray-700 font-semibold">740</p>
             </div>
-            <span className="text-5xl text-green-500">
+            <span className="text-5xl text-green-500 hover:scale-110 duration-300">
               <i className="fa-solid fa-globe"></i>
             </span>
           </div>
@@ -43,7 +57,7 @@ export default function Home() {
               <p className="text-xl font-medium">Return Orders</p>
               <p className="text-gray-700 font-semibold">8400</p>
             </div>
-            <span className="text-5xl text-red-500">
+            <span className="text-5xl text-red-500 hover:scale-110 duration-300">
               <i className="fa-solid fa-arrow-right-arrow-left"></i>
             </span>
           </div>
@@ -53,7 +67,7 @@ export default function Home() {
               <p className="text-xl font-medium">Total Customers</p>
               <p className="text-gray-700 font-semibold">1,200</p>
             </div>
-            <span className="text-5xl text-purple-500">
+            <span className="text-5xl text-purple-500 hover:scale-110 duration-300">
               <i className="fa-solid fa-users"></i>
             </span>
           </div>
@@ -62,8 +76,27 @@ export default function Home() {
 
       <section className="px-6 py-5">
         <div className="grid md:grid-cols-2 gap-5">
-          <div className="shadow-md rounded bg-white p-4 h-[500px] flex flex-col">
-            <h1 className="text-xl font-semibold mb-3">Our Products</h1>
+          <div
+            className="shadow-md rounded bg-white p-4
+           h-[500px] flex flex-col"
+          >
+            <div className="flex justify-between items-center  mb-1">
+              <div>
+                <h1 className="text-xl font-semibold mb-3">Our Products</h1>
+              </div>
+
+              <div className="relative md:block">
+                <i className="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                <input
+                  type="text"
+                  placeholder="Search here..."
+                  onChange={onChange}
+                  value={search}
+                  className=" text-sm max-w-sm w-80 pl-9 pr-3 py-1.5 border-2 rounded-md 
+              outline-none focus:ring-1 focus:ring-blue-500"
+                />
+              </div>
+            </div>
 
             <div className="flex-1 overflow-auto">
               <table className="w-full border border-gray-300">
@@ -78,7 +111,7 @@ export default function Home() {
                 </thead>
 
                 <tbody>
-                  {products.map((p) => (
+                  {filteredProducts.map((p) => (
                     <tr key={p.id} className="text-center hover:bg-gray-50">
                       <td className="border p-2">{p.id}</td>
                       <td className="border p-2">{p.title}</td>
@@ -110,16 +143,16 @@ export default function Home() {
         <h1 className="text-xl font-semibold mb-4">Quick Actions</h1>
 
         <div className="grid md:grid-cols-4 gap-4">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+          <button className="bg-blue-600 text-white px-4 py-5 rounded hover:bg-blue-700">
             Add Product
           </button>
-          <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+          <button className="bg-green-600 text-white px-4 py-5 rounded hover:bg-green-700">
             Add Category
           </button>
-          <button className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
+          <button className="bg-yellow-500 text-white px-4 py-5 rounded hover:bg-yellow-600">
             View Orders
           </button>
-          <button className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
+          <button className="bg-purple-600 text-white px-4 py-5 rounded hover:bg-purple-700">
             View Customers
           </button>
         </div>

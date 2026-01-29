@@ -5,12 +5,13 @@ import { AuthContext } from "../context/AuthContext";
 export default function AuthLogic({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
     return localStorage.getItem("isLoggedIn") === "true";
-  }); 
-  
+  });
+
   const [userValue, setUserValue] = useState("");
   const [pwdValue, setPwdValue] = useState("");
 
   const navigate = useNavigate();
+
   const userName = "demo";
   const userPwd = "1234";
 
@@ -22,12 +23,26 @@ export default function AuthLogic({ children }) {
     setPwdValue(e.target.value);
   };
 
-  const handleLogin = () => {
-    if (userValue === userName && pwdValue === userPwd) {
-      setIsLoggedIn(true);
-      navigate("/dashboard");
-      localStorage.setItem("isLoggedIn", "true");
+  const handleEnterKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleLogin();
     }
+  };
+  
+  const handleLogin = () => {
+    if (userValue.trim() === "" || pwdValue.trim() === "") {
+      alert("Name: demo || pwd: 1234");
+      return;
+    }
+
+    if (userValue !== userName || pwdValue !== userPwd) {
+      alert("Wrong Authentication");
+      return;
+    }
+
+    setIsLoggedIn(true);
+    localStorage.setItem("isLoggedIn", "true");
+    navigate("/dashboard");
   };
 
   const handleLogout = () => {
@@ -45,6 +60,7 @@ export default function AuthLogic({ children }) {
         handleLogin,
         isLoggedIn,
         handleLogout,
+        handleEnterKeyPress,
       }}
     >
       {children}

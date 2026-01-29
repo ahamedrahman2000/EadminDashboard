@@ -2,8 +2,7 @@ export default function AllCustomers() {
   return (
     <div className="p-6">
       <h1 className="text-2xl font-semibold mb-6">All Customers</h1>
-
-      {/* Filters */}
+ 
       <div className="flex gap-4 mb-6">
         <select className="border px-4 py-2 rounded">
           <option>All Status</option>
@@ -17,8 +16,7 @@ export default function AllCustomers() {
           className="border px-4 py-2 rounded w-64"
         />
       </div>
-
-      {/* Customers Table */}
+ 
       <div className="bg-white shadow rounded overflow-hidden">
         <table className="w-full text-sm">
           <thead className="bg-gray-100">

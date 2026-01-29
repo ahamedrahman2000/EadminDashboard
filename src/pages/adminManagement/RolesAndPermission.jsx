@@ -2,8 +2,7 @@ export default function RolesPermissions() {
   return (
     <div className="p-6 space-y-6">
       <h1 className="text-2xl font-semibold">Roles & Permissions</h1>
-
-      {/* Add Role */}
+ 
       <div className="bg-white shadow rounded p-4 space-y-4">
         <h2 className="font-medium">Create New Role</h2>
 
@@ -33,8 +32,7 @@ export default function RolesPermissions() {
           Save Role
         </button>
       </div>
-
-      {/* Roles List */}
+ 
       <div className="bg-white shadow rounded p-4">
         <h2 className="font-medium mb-3">Existing Roles</h2>
         <ul className="space-y-2">

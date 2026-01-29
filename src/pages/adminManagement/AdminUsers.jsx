@@ -2,8 +2,7 @@ export default function AdminUsers() {
   return (
     <div className="p-6 space-y-6">
       <h1 className="text-2xl font-semibold">Admin Users</h1>
-
-      {/* Actions */}
+ 
       <div className="flex justify-between">
         <input
           type="text"
@@ -14,8 +13,7 @@ export default function AdminUsers() {
           Add Admin
         </button>
       </div>
-
-      {/* Table */}
+ 
       <div className="bg-white shadow rounded overflow-x-auto">
         <table className="w-full text-sm">
           <thead className="bg-gray-100">

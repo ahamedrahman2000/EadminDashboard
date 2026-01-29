@@ -349,4 +349,17 @@ export const products = [
     rating: 4.7,
     reviews: 66,
   },
+  {
+    colors: ["#F52900", "#29F500", "#0010F5"],
+    sizes: ["S", "M", "L"],
+    id: 25,
+    title: "Wheel chair",
+    price: 15.99,
+    category: "Adult",
+    image: mam,
+    thumbnails: [headphone, headphone2, camera],
+    description: "Safe and gentle wheeling care product.",
+    rating: 4.7,
+    reviews: 27,
+  },
 ];

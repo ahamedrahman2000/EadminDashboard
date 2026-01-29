@@ -2,8 +2,7 @@ export default function CustomerSupport() {
   return (
     <div className="p-6 space-y-6">
       <h1 className="text-2xl font-semibold">Customer Support</h1>
-
-      {/* Stats */}
+ 
       <div className="grid grid-cols-4 gap-4">
         <div className="bg-white shadow rounded p-4">
           <p className="text-gray-500 text-sm">Open Tickets</p>
@@ -25,8 +24,7 @@ export default function CustomerSupport() {
           <p className="text-2xl font-bold">2h</p>
         </div>
       </div>
-
-      {/* Filters */}
+ 
       <div className="bg-white shadow rounded p-4 flex gap-4">
         <select className="border rounded px-3 py-2">
           <option>All Status</option>
@@ -48,8 +46,7 @@ export default function CustomerSupport() {
           className="border rounded px-3 py-2 flex-1"
         />
       </div>
-
-      {/* Tickets Table */}
+ 
       <div className="bg-white shadow rounded p-4 overflow-x-auto">
         <table className="w-full text-sm">
           <thead className="bg-gray-100">

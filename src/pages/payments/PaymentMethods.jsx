@@ -2,8 +2,7 @@ export default function PaymentMethods() {
   return (
     <div className="p-6 space-y-6">
       <h1 className="text-2xl font-semibold">Payment Methods</h1>
-
-      {/* Add Method */}
+ 
       <div className="bg-white shadow rounded p-4 space-y-4">
         <h2 className="font-medium">Add Payment Method</h2>
 
@@ -24,8 +23,7 @@ export default function PaymentMethods() {
           Add Method
         </button>
       </div>
-
-      {/* Methods List */}
+ 
       <div className="bg-white shadow rounded p-4">
         <h2 className="font-medium mb-3">Available Methods</h2>
 

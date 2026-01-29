@@ -24,13 +24,14 @@ import Language from "../pages/settings/Language";
 import StoreInfo from "../pages/settings/StoreInfo";
 
 export default function Dashboard() {
+   const [isOpen, setOpen] = useState(true);
   const [activeTab, setActiveTab] = useState("home");
 
   return (
     <div className="flex">
-      <SideBar activeTab={activeTab} setActiveTab={setActiveTab} />
+      <SideBar isOpen={isOpen} setOpen={setOpen} activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      <main className="flex-1">
+      <main  className={`${isOpen ? "ml-64" : "ml-16"} flex-1 transition-all duration-300`}>
         <Header />
 
         {activeTab === "home" && <Home />}

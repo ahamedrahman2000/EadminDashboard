@@ -2,8 +2,7 @@ export default function ActivityLogs() {
   return (
     <div className="p-6 space-y-6">
       <h1 className="text-2xl font-semibold">Activity Logs</h1>
-
-      {/* Filters */}
+ 
       <div className="bg-white shadow rounded p-4 flex gap-4">
         <select className="border rounded px-3 py-2">
           <option>All Actions</option>
@@ -24,8 +23,7 @@ export default function ActivityLogs() {
           className="border rounded px-3 py-2 flex-1"
         />
       </div>
-
-      {/* Logs Table */}
+ 
       <div className="bg-white shadow rounded overflow-x-auto">
         <table className="w-full text-sm">
           <thead className="bg-gray-100">

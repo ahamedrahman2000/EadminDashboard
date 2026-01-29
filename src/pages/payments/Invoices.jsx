@@ -2,8 +2,7 @@ export default function Invoices() {
   return (
     <div className="p-6 space-y-6">
       <h1 className="text-2xl font-semibold">Invoices</h1>
-
-      {/* Filters */}
+ 
       <div className="bg-white shadow rounded p-4 flex gap-4">
         <input
           type="text"
@@ -12,8 +11,7 @@ export default function Invoices() {
         />
         <input type="date" className="border rounded px-3 py-2" />
       </div>
-
-      {/* Table */}
+ 
       <div className="bg-white shadow rounded overflow-x-auto">
         <table className="w-full text-sm">
           <thead className="bg-gray-100">
