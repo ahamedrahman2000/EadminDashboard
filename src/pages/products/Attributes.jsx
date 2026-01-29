@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ProductContext } from "../../context/ProductContext";
 
 export default function Attributes() {
-  const { productList, setProductList } = useContext(ProductContext);
+  const { productList } = useContext(ProductContext);
 
   const allSizes = productList.flatMap((p) => p.sizes || []);
   const uniqueSizes = [...new Set(allSizes)];
